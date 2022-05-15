@@ -8,7 +8,8 @@
 html {
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: #a8a7a7;
+    box-sizing: border-box;
 }
 
 body {
@@ -32,13 +33,49 @@ header {
     grid-row: 1 / 2;
 }
 
+p,
+h2 {
+    margin: 0px;
+}
+
 .header-top-row {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    height: 40%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .header-top-row>div {
-    border: 1px solid red;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    align-self: center;
+}
+
+[type="search"] {
+    width: 80%;
+    font-size: 1.2rem;
+    background-color: var(--main-bg-color);
+    margin-left: 10px;
+}
+
+.header-bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
+    height: 60%;
+    font-size: 1.2rem;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.header-bottom-row>div {
+    align-self: center;
+
+}
+
+.header-bottom-row>div:first-child {
+    justify-self: end;
+    padding-right: 15px;
 }
 
 nav {
@@ -69,9 +106,34 @@ nav {
     margin-top: 50px;
 }
 
-
 main {
     background-color: var(--main-bg-color);
     grid-column: 2 / -1;
     grid-row: 2 / -1;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.main-main-area {
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 1fr 1fr 1fr;
+    padding-left: 15px;
+    gap: 10px;
+}
+
+.main-main-area>h3 {
+    grid-column: 1 / -1;
+    margin: 0px;
+    padding-left: 10px;
+    padding-top: 30px;
+}
+
+.card {
+    width: 90%;
+    height: 70%;
+    background-color: #a8a7a7;
+    align-self: center;
+    justify-self: center;
 }
