@@ -1,1 +1,77 @@
+:root {
+    --main-bg-color: #d1d1f5;
+    --primary-color: #585858;
+    --secondary-color: #ffffff;
 
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+body {
+    width: 70vw;
+    height: 100vh;
+    margin: 0px;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr 4fr;
+    background-color: var(--main-bg-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+}
+
+.header-top-row {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+}
+
+.header-top-row>div {
+    border: 1px solid red;
+}
+
+nav {
+    background-color: var(--primary-color);
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.nav-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    font-size: 1.5rem;
+    margin: 20px 0px;
+}
+
+.nav-icon {
+    justify-self: center;
+}
+
+#top-nav-item {
+    font-size: 1.8rem;
+    margin: 20px 0px 50px 0px;
+}
+
+#nav-settings {
+    margin-top: 50px;
+}
+
+
+main {
+    background-color: var(--main-bg-color);
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+}
