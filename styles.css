@@ -3,16 +3,17 @@
 }
 
 :root {
-    --main-bg-color: #d1d1f5;
-    --primary-color: #585858;
-    --secondary-color: #ffffff;
+    --color-primary: #94a3b8;
+    --color-secondary: #475569;
+    --color-dark: #1e293b;
+    --color-light: #e2e8f0;
 
 }
 
 html {
     display: flex;
     justify-content: center;
-    background-color: #a8a7a7;
+    background-color: black;
     box-sizing: border-box;
 }
 
@@ -28,11 +29,11 @@ body {
     display: grid;
     grid-template-columns: 2fr 7fr;
     grid-template-rows: 1fr 4fr;
-    background-color: var(--main-bg-color);
+    background-color: var(--color-primary);
 }
 
 header {
-    background-color: var(--secondary-color);
+    background-color: var(--color-light);
     grid-column: 2 / -1;
     grid-row: 1 / 2;
 }
@@ -48,10 +49,13 @@ h2 {
 
 h3 {
     font-size: 1.4rem;
+    color: var(--color-light);
 }
 
 h4 {
     font-size: 1.2rem;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 h5 {
@@ -75,7 +79,7 @@ h5 {
 [type="search"] {
     width: 80%;
     font-size: 1.2rem;
-    background-color: var(--main-bg-color);
+    background-color: var(--color-primary);
     margin-left: 10px;
 }
 
@@ -99,10 +103,10 @@ h5 {
 }
 
 nav {
-    background-color: var(--primary-color);
+    background-color: var(--color-primary);
     grid-column: 1 / 2;
     grid-row: 1 / -1;
-    color: var(--secondary-color);
+    color: var(--color-dark);
     font-size: 1.2rem;
 }
 
@@ -127,7 +131,7 @@ nav {
 }
 
 main {
-    background-color: var(--main-bg-color);
+    background-color: var(--color-secondary);
     grid-column: 2 / -1;
     grid-row: 2 / -1;
     display: grid;
@@ -155,40 +159,48 @@ main {
 .card {
     width: 90%;
     height: 70%;
-    background-color: #a8a7a7;
+    background-color: var(--color-light);
     align-self: start;
     justify-self: center;
+    padding: 10px 20px;
+}
+
+.card>p {
+    font-size: 0.9rem;
+}
+
+.card-icons {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 30px 30px 30px;
+    justify-content: end;
 }
 
 .main-side-area {
     padding: 0px 15px 15px 15px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30px 1fr 30px 1fr;
+
 
     gap: 10px;
 }
 
 .announcement>h3 {
     margin: 0px;
-    grid-row: 1 / 2;
 
 }
 
-.announcement-box {
-    grid-row: 2 /3;
-}
 
 .announcement>div {
-    background-color: var(--secondary-color);
+    background-color: var(--color-light);
     box-sizing: border-box;
     margin: 0px;
     padding: 15px;
 
 }
 
-.announcement>div>p {
-    font-size: 0.8rem;
+.announcement-box>div>p {
+    font-size: 0.8em;
     padding: 5px;
 }
 
@@ -201,12 +213,10 @@ main {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 1fr;
-    grid-row: 4 / 5;
+
 }
 
-.trending>h3 {
-    grid-row: 3 /4;
-}
+
 
 .trending .icon {
     grid-column: 1 / 2;
