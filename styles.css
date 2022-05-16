@@ -21,6 +21,7 @@ body {
     width: 70vw;
     height: 100vh;
     margin: 0px;
+    font-family: 'Hind', sans-serif;
 }
 
 .main-container {
@@ -60,6 +61,11 @@ h4 {
 
 h5 {
     font-size: 1rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 .header-top-row {
@@ -102,6 +108,12 @@ h5 {
     padding-right: 15px;
 }
 
+button {
+    width: 70px;
+    height: 25px;
+    border-radius: 20px;
+}
+
 nav {
     background-color: var(--color-primary);
     grid-column: 1 / 2;
@@ -135,7 +147,7 @@ main {
     grid-column: 2 / -1;
     grid-row: 2 / -1;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
     padding-top: 30px;
 }
 
@@ -158,11 +170,14 @@ main {
 
 .card {
     width: 90%;
-    height: 70%;
+    height: 90%;
     background-color: var(--color-light);
     align-self: start;
     justify-self: center;
     padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
 }
 
 .card>p {
@@ -178,24 +193,30 @@ main {
 
 .main-side-area {
     padding: 0px 15px 15px 15px;
-    display: grid;
-    grid-template-columns: 1fr;
-
-
     gap: 10px;
 }
 
-.announcement>h3 {
+
+
+.announcement>h3,
+.trending>h3 {
     margin: 0px;
 
 }
 
 
-.announcement>div {
+
+.announcement-box {
+    padding-top: 10px;
+
+}
+
+.announcement-box>div,
+.trending-box>div {
     background-color: var(--color-light);
     box-sizing: border-box;
     margin: 0px;
-    padding: 15px;
+    padding: 10px 15px;
 
 }
 
@@ -204,15 +225,25 @@ main {
     padding: 5px;
 }
 
-.announcement>div>h5 {
+.announcement-box>div>h5 {
     margin: 0px;
     padding: 5px;
 }
 
-.trending>div {
+.trending>h3 {
+    margin-top: 20px;
+}
+
+.trending-box {
+    margin-top: 10px;
+
+}
+
+.trending-box>div {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 1fr;
+    padding: 15px 15px;
 
 }
 
