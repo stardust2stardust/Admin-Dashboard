@@ -24,12 +24,17 @@ body {
     font-family: 'Hind', sans-serif;
 }
 
+svg {
+    color: var(--color-secondary);
+
+}
+
 .main-container {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: 2fr 7fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 150px 1fr;
     background-color: var(--color-primary);
 }
 
@@ -66,6 +71,8 @@ h5 {
 img {
     width: 100%;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px var(--color-dark);
 }
 
 .header-top-row {
@@ -87,6 +94,8 @@ img {
     font-size: 1.2rem;
     background-color: var(--color-primary);
     margin-left: 10px;
+    border: none;
+    border-radius: 10px;
 }
 
 .header-bottom-row {
@@ -120,6 +129,7 @@ nav {
     grid-row: 1 / -1;
     color: var(--color-dark);
     font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .nav-item {
@@ -127,10 +137,17 @@ nav {
     grid-template-columns: 1fr 3fr;
     font-size: 1.5rem;
     margin: 20px 0px;
+
 }
 
 .nav-icon {
     justify-self: center;
+
+}
+
+.nav-icon>svg {
+    color: var(--color-dark);
+
 }
 
 #top-nav-item {
@@ -148,7 +165,7 @@ main {
     grid-row: 2 / -1;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
 .main-main-area {
@@ -157,7 +174,7 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 30px 1fr 1fr 1fr;
     padding-left: 15px;
-    gap: 10px;
+
 }
 
 .main-main-area>h3 {
@@ -170,14 +187,16 @@ main {
 
 .card {
     width: 90%;
-    height: 90%;
+    height: 80%;
     background-color: var(--color-light);
-    align-self: start;
+    align-self: center;
     justify-self: center;
     padding: 10px 20px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--color-dark);
 }
 
 .card>p {
