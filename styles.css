@@ -9,7 +9,6 @@
     --color-secondary: #475569;
     --color-dark: #1e293b;
     --color-light: #e2e8f0;
-
 }
 
 html {
@@ -23,13 +22,12 @@ body {
 
 svg {
     color: var(--color-secondary);
-
 }
 
 .main-container {
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: 150px;
     background-color: var(--color-primary);
 }
@@ -64,14 +62,11 @@ h5 {
     font-size: 1rem;
 }
 
-
-
 .header-top-row {
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1fr;
     height: 40%;
     padding: 20px;
-
 }
 
 .header-top-row>div {
@@ -95,12 +90,10 @@ h5 {
     height: 60%;
     font-size: 1.2rem;
     padding: 10px;
-
 }
 
 .header-bottom-row>div {
     align-self: center;
-
 }
 
 .header-bottom-row>div:first-child {
@@ -128,17 +121,14 @@ nav {
     grid-template-columns: 1fr 3fr;
     font-size: 1.5rem;
     margin: 20px 0px;
-
 }
 
 .nav-icon {
     justify-self: center;
-
 }
 
 .nav-icon>svg {
     color: var(--color-dark);
-
 }
 
 #top-nav-item {
@@ -152,24 +142,19 @@ nav {
 
 main {
     background-color: var(--color-secondary);
-
     grid-column: 2 / -1;
     grid-row: 2 / -1;
     display: grid;
     grid-template-columns: 5fr 2fr;
-
 }
 
 .main-main-area {
-
     display: grid;
     grid-template-rows: 30px;
     padding-left: 15px;
 }
 
-
 .main-main-area>h3 {
-
     margin: 0px;
     padding-left: 10px;
 
@@ -182,9 +167,7 @@ main {
     grid-template-rows: repeat(auto-fit, minmax(150px, 230px));
     justify-items: center;
     align-items: center;
-
 }
-
 
 .card {
     background-color: var(--color-light);
@@ -215,41 +198,27 @@ img {
 }
 
 .main-side-area {
+    background-color: var(--color-dark);
     height: 100%;
-    padding: 0px 15px 15px 15px;
+    padding: 15px;
     gap: 10px;
-
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
 
-
-
 .announcement>h3,
 .trending>h3 {
     margin: 0px;
-
 }
-
-
 
 .announcement-box {
-    padding-top: 10px;
-    height: 50%;
-}
-
-.announcement-box>div,
-.trending-box>div {
+    padding: 10px;
     background-color: var(--color-light);
-
-    margin: 0px;
-
-
+    border-radius: 10px;
 }
 
 .announcement-box>div>p {
     font-size: 0.7rem;
-
 }
 
 .announcement-box>div>h5 {
@@ -262,31 +231,30 @@ img {
 }
 
 .trending-box {
-
-    height: 40%;
+    background-color: var(--color-light);
+    border-radius: 10px;
 }
 
 .trending-box>div {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr;
-
-
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 25px 1fr;
 }
-
-
 
 .trending .icon {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
+    max-height: 70px;
+
 }
 
-.trending .tag {
+.tag {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
 
-.trending .description {
+.description {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    font-size: 0.7rem;
 }
