@@ -64,19 +64,33 @@ h5 {
 
 .header-top-row {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr 1fr;
-    height: 40%;
-    padding: 20px;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+
+}
+
+.header-top-right {
+    display: grid;
+    grid-template-columns: 50px 1fr 2fr;
+    align-items: center;
 }
 
 .header-top-row>div {
     padding-left: 20px;
     font-size: 1.2rem;
-    align-self: center;
+
 }
 
+.header-top-left {
+    /* justify-self: start;
+    align-self: center; */
+    display: grid;
+
+}
+
+
+
 [type="search"] {
-    width: 80%;
     font-size: 1.2rem;
     background-color: var(--color-primary);
     margin-left: 10px;
@@ -86,7 +100,7 @@ h5 {
 
 .header-bottom-row {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
+    grid-template-columns: 100px 6fr 1fr 1fr 1fr;
     height: 60%;
     font-size: 1.2rem;
     padding: 10px;
@@ -102,9 +116,14 @@ h5 {
 }
 
 button {
-    width: 70px;
-    height: 25px;
-    border-radius: 20px;
+    width: 100px;
+    height: 35px;
+    border-radius: 30px;
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
 }
 
 nav {
