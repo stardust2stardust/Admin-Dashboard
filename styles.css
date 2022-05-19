@@ -13,13 +13,13 @@
 
 html {
     background-color: black;
-    display: flex;
-    justify-content: center;
+
+
+   
 }
 
 body {
-    max-width: 1400px;
-    max-height: 1000px;
+
     margin: 0px;
     font-family: 'Hind', sans-serif;
 }
@@ -30,7 +30,7 @@ svg {
 
 .main-container {
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: minmax(240px, 1fr) 5fr;
     grid-template-rows: 150px;
     background-color: var(--color-primary);
 }
@@ -196,42 +196,39 @@ main {
     grid-template-columns: 6fr 2fr;
 }
 
-/* .main-main-area {
-    display: grid;
-    grid-template-rows: 30px;
-    padding-left: 15px;
-    padding-top: 15px;
-    overflow-y: scroll;
-} */
+.main-main-area {
+    padding: 15px 0px 15px 10px;
+}
 
 .main-main-area>h3 {
     margin: 0px;
-    padding-left: 10px;
-
+    padding-left: 20px;
 }
 
 .card-area {
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-rows: repeat(auto-fit, minmax(150px, 230px)); */
+    grid-template-rows: repeat(auto-fit, minmax(150px, 200px));
     justify-items: center;
     align-items: center;
-    row-gap: 15px;
+    row-gap: 30px;
 }
 
 .card {
+    /* background: linear-gradient(0.25turn, var(--color-primary), var(--color-light));; */
     background-color: var(--color-light);
     display: grid;
     border-radius: 10px;
     justify-items: center;
     align-items: center;
+    
 }
 
 img {
-    border-radius: 15px;
+    border-radius: 10px;
     max-width: 250px;
     padding: 10px 10px 0px 10px;
+
 }
 
 .card>p {
@@ -246,6 +243,7 @@ img {
     grid-template-columns: 30px 30px 30px;
     padding-right: 10px;
     justify-self: end;
+    
 }
 
 .main-side-area {
