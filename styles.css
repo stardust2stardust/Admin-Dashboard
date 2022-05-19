@@ -13,9 +13,13 @@
 
 html {
     background-color: black;
+    display: flex;
+    justify-content: center;
 }
 
 body {
+    max-width: 1400px;
+    max-height: 1000px;
     margin: 0px;
     font-family: 'Hind', sans-serif;
 }
@@ -25,7 +29,6 @@ svg {
 }
 
 .main-container {
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 6fr;
     grid-template-rows: 150px;
@@ -190,15 +193,16 @@ main {
     grid-column: 2 / -1;
     grid-row: 2 / -1;
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 6fr 2fr;
 }
 
-.main-main-area {
+/* .main-main-area {
     display: grid;
     grid-template-rows: 30px;
     padding-left: 15px;
     padding-top: 15px;
-}
+    overflow-y: scroll;
+} */
 
 .main-main-area>h3 {
     margin: 0px;
@@ -210,9 +214,10 @@ main {
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(auto-fit, minmax(150px, 230px));
+    /* grid-template-rows: repeat(auto-fit, minmax(150px, 230px)); */
     justify-items: center;
     align-items: center;
+    row-gap: 15px;
 }
 
 .card {
@@ -225,7 +230,7 @@ main {
 
 img {
     border-radius: 15px;
-    max-width: 280px;
+    max-width: 250px;
     padding: 10px 10px 0px 10px;
 }
 
@@ -246,26 +251,27 @@ img {
 .main-side-area {
     background-color: var(--color-dark);
     height: 100%;
-    padding: 15px 70px;
+    padding: 15px 30px;
 
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+    /* display: grid;
+    grid-template-rows: 1fr 1fr; */
 }
 
 .announcement>h3,
 .trending>h3 {
     margin: 0px;
-    padding-bottom: 3px;
+   
 }
 
 .announcement-box {
-    padding: 0px 20px 20px 20px;
+    padding: 0px 15px 20px 15px;
     background-color: var(--color-primary);
     border-radius: 10px;
 }
 
 .announcement-box>div>p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+    line-height: 0.7rem;
 }
 
 .announcement-box>div>h5 {
@@ -286,7 +292,7 @@ img {
 .trending-box>div {
     display: grid;
     grid-template-columns: 50px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 20px 1fr;
     column-gap: 5px;
     margin: 5px 0px;
 
@@ -295,17 +301,18 @@ img {
 .trending .icon {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
-    max-height: 50px;
+    max-height: 40px;
     border: 1px solid var(--color-secondary);
     padding: 0px;
     border-radius: 5px;
-
+    align-self: center;
 }
 
 .tag {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     padding-left: 10px;
+    font-size: 0.8rem;
 }
 
 .description {
