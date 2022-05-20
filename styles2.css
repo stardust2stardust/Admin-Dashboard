@@ -38,39 +38,6 @@ body {
     font-family: 'Hind', sans-serif;
 }
 
-svg {
-    color: var(--color-secondary);
-}
-
-body {
-    display: grid;
-    place-content: center;
-    min-height: 100vh;
-
-}
-
-.main-container {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: minmax(220px, 275px) 1fr;
-    grid-template-rows: 175px 1fr;
-    grid-template-areas:
-        "nav header"
-        "nav main";
-    /* grid-template-columns: 1fr 6fr;
-    grid-template-rows: 150px; */
-    background-color: var(--color-primary);
-}
-
-header {
-    background-color: var(--color-light);
-    grid-area: header;
-    display: grid;
-    grid-template-areas:
-        "top-row"
-        "bottom-row";
-}
-
 p,
 h2 {
     margin: 0px;
@@ -95,45 +62,62 @@ h5 {
     font-size: 1rem;
 }
 
+svg {
+    color: var(--color-secondary);
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+
+}
+
+.main-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(220px, 275px) 1fr;
+    grid-template-rows: 175px 1fr;
+    grid-template-areas:
+        "nav header"
+        "nav main";
+    background-color: var(--color-primary);
+}
+
+header {
+    background-color: var(--color-light);
+    grid-area: header;
+    display: grid;
+    grid-template-areas:
+        "top-row"
+        "bottom-row";
+}
+
+/* Header Top Row  */
 .header-top-row {
     grid-area: top-row;
     display: grid;
-    grid-template-columns: 4fr 1fr;
-    align-items: center;
-    padding: 15px 10px 0px 10px;
-
-}
-
-/* .header-top-right {
-    display: grid;
-    grid-template-columns: 50px 1fr 2fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: auto 60px 50px 120px;
+    grid-template-areas:
+        "form notification avatar-small user-name";
     align-items: center;
     justify-items: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-} */
+    padding: 0px 20px;
 
-.header-top-right>img {
-    box-shadow: 0px 0px 5px var(--color-secondary);
-    padding: 0px;
-    width: 35px;
-    justify-self: end;
 }
 
-.header-top-right>div:last-child {
+form {
+    grid-area: form;
     justify-self: start;
-    padding-left: 20px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
 }
 
-.header-top-left {
-    display: grid;
-
-}
-
-[type="search"] {
-    width: 40%;
+input {
+    width: 100%;
     font-size: 1.2rem;
     font-weight: 700;
     background-color: var(--color-primary);
@@ -141,39 +125,59 @@ h5 {
     border: none;
     border-radius: 15px;
     padding: 10px 5px 3px 5px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+.notification {
+    grid-area: notification;
+
 
 }
 
-form {
-    padding-left: 20px;
-}
-
-.header-bottom-row {
-    grid-area: bottom-row;
-    display: grid;
-    grid-template-columns: 100px 6fr 1fr 1fr 1fr;
-    height: 60%;
-    font-size: 1.2rem;
-    padding: 10px;
-    padding-top: 20px;
-}
-
-.header-bottom-row>div {
-    align-self: center;
-}
-
-.header-bottom-row>div:first-child {
-    justify-self: end;
-    padding-right: 15px;
-}
-
-.header-bottom-row>div>img {
-    width: 50px;
+.avatar-small {
+    grid-area: avatar-small;
     box-shadow: 0px 0px 5px var(--color-secondary);
-    padding: 0px;
+    width: 45px;
+    border-radius: 5px;
 }
 
-button {
+.user-name {
+    grid-area: user-name;
+    font-size: 1.2rem;
+}
+
+/* Header Bottom Row  */
+.header-bottom-row {
+    display: grid;
+    grid-template-columns: 70px auto 400px;
+    grid-template-areas:
+        "avatar-med welcome button-area";
+    justify-items: start;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.avatar-med {
+    grid-area: avatar-med;
+}
+
+.welcome {
+    grid-area: welcome;
+}
+
+.buttons {
+    grid-area: button-area;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+    justify-self: end;
+}
+
+.buttons>button {
     width: 100px;
     height: 35px;
     border-radius: 30px;
@@ -184,14 +188,38 @@ button {
     border: none;
 }
 
+/*  Nav area */
 nav {
-    background-color: var(--color-primary);
     grid-area: nav;
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-areas:
+        "logo"
+        "upper-nav"
+        "lower-nav";
+    background-color: var(--color-primary);
     color: var(--color-dark);
     font-size: 1.2rem;
     font-weight: 700;
     padding-top: 10px;
     padding-left: 20px;
+
+}
+
+.logo {
+    grid-area: logo;
+    align-items: center;
+}
+
+.upper-nav {
+    grid-area: upper-nav;
+    align-self: start;
+}
+
+.lower-nav {
+    grid-area: lower-nav;
+    align-self: end;
+    padding-bottom: 40px;
 }
 
 .nav-item {
@@ -203,87 +231,125 @@ nav {
 
 .nav-icon {
     justify-self: center;
+    display: flex;
+    align-items: center;
 }
 
 .nav-icon>svg {
     color: var(--color-dark);
+
 }
 
-#top-nav-item {
-    font-size: 1.8rem;
-    margin-top: 20px;
-}
-
-
-#nav-settings {
-    margin-top: 100px;
-}
-
+/* Main Area */
 main {
-    background-color: var(--color-secondary);
+
     grid-area: main;
     display: grid;
-    grid-template-columns: 5fr 2fr;
-    overflow-y: scroll;
-}
-
-.main-main-area {
-    display: grid;
+    grid-template-columns: 300px 300px 300px minmax(280px, 350px);
     grid-template-rows: 30px;
-    padding-left: 15px;
-    padding-top: 15px;
+    grid-template-areas:
+        "title title title sidebar"
+        "card0 card1 card2 sidebar"
+        "card3 card4 card5 sidebar"
+        "card6 card7 card8 sidebar";
+    gap: 20px;
+    overflow-y: scroll;
+    background-color: var(--color-secondary);
+    padding-left: 20px;
 }
 
-.main-main-area>h3 {
-    margin: 0px;
-    padding-left: 10px;
-
+.title {
+    grid-area: title;
+    padding-top: 10px;
 }
 
-.card-area {
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(auto-fit, minmax(150px, 230px));
-    justify-items: center;
-    align-items: center;
+.card:nth-child(0) {
+    grid-area: card0
 }
 
+.card:nth-child(1) {
+    grid-area: card1
+}
+
+.card:nth-child(2) {
+    grid-area: card2
+}
+
+.card:nth-child(3) {
+    grid-area: card3
+}
+
+.card:nth-child(4) {
+    grid-area: card4
+}
+
+.card:nth-child(5) {
+    grid-area: card5
+}
+
+.card:nth-child(6) {
+    grid-area: card6
+}
+
+.card:nth-child(7) {
+    grid-area: card7
+}
+
+.card:nth-child(8) {
+    grid-area: card8
+}
+
+
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+/* Card Layout */
 .card {
     background-color: var(--color-light);
     display: grid;
+    grid-template-rows: auto 0.9rem auto;
+    grid-template-areas:
+        "image"
+        "img-title"
+        "img-options";
     border-radius: 10px;
     justify-items: center;
     align-items: center;
 }
 
-img {
+.card-image {
+    grid-area: image;
     border-radius: 15px;
     max-width: 280px;
-    padding: 10px 10px 0px 10px;
+    width: 100%;
 }
 
 @media screen and (max-width: 1500px) {
-    img {
+    .card-image {
         max-width: 240px;
     }
 }
 
 .card>p {
+    grid-area: img-title;
     font-size: 0.8rem;
     justify-self: start;
     padding-left: 10px;
+
 }
 
 .card-icons {
-
+    grid-area: img-options;
     display: grid;
     grid-template-columns: 30px 30px 30px;
     padding-right: 10px;
     justify-self: end;
 }
 
-.main-side-area {
+/* Sidebar */
+.sidebar {
     background-color: var(--color-dark);
     height: 100%;
     padding: 15px 25px;
