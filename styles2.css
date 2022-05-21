@@ -76,13 +76,14 @@ body {
 .main-container {
     height: 100vh;
     display: grid;
-    grid-template-columns: minmax(220px, 275px) 1fr;
+    grid-template-columns: 250px 1fr;
     grid-template-rows: 175px 1fr;
     grid-template-areas:
         "nav header"
         "nav main";
     background-color: var(--color-primary);
 }
+
 
 header {
     background-color: var(--color-light);
@@ -218,8 +219,8 @@ nav {
 
 .lower-nav {
     grid-area: lower-nav;
-    align-self: end;
-    padding-bottom: 40px;
+    align-self: center;
+
 }
 
 .nav-item {
@@ -246,12 +247,14 @@ main {
     grid-area: main;
     display: grid;
     grid-template-columns: 300px 300px 300px minmax(280px, 350px);
-    grid-template-rows: 30px;
+    grid-template-rows: 30px repeat(3, 230px);
+    grid-auto-rows: 230px;
     grid-template-areas:
         "title title title sidebar"
         "card0 card1 card2 sidebar"
         "card3 card4 card5 sidebar"
         "card6 card7 card8 sidebar";
+
     gap: 20px;
     overflow-y: scroll;
     background-color: var(--color-secondary);
@@ -326,11 +329,7 @@ main {
     width: 100%;
 }
 
-@media screen and (max-width: 1500px) {
-    .card-image {
-        max-width: 240px;
-    }
-}
+
 
 .card>p {
     grid-area: img-title;
@@ -348,12 +347,42 @@ main {
     justify-self: end;
 }
 
+
+@media only screen and (max-width: 1540px) {
+    .main-container {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 150px 1fr;
+
+    }
+
+    input,
+    .nav-item {
+        font-size: 1.1rem;
+    }
+
+    main {
+        grid-template-columns: 250px 250px 250px minmax(240px, 300px);
+        grid-template-rows: 30px repeat(3, 200px);
+
+
+    }
+
+    .card {
+        grid-template-rows: 130px 0.9rem 40px;
+        max-width: 280px;
+
+
+    }
+
+    .card-image {
+        max-width: 220px;
+    }
+}
+
 /* Sidebar */
 .sidebar {
     background-color: var(--color-dark);
-    height: 100%;
     padding: 15px 25px;
-
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
@@ -377,6 +406,50 @@ main {
 .announcement-box>div>h5 {
     margin: 0px;
     padding: 15px 0px 0px 0px;
+}
+
+@media only screen and (max-width: 1540px) {
+    .main-container {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 150px 1fr;
+    }
+
+    input,
+    .nav-item {
+        font-size: 1.1rem;
+    }
+
+    main {
+        grid-template-columns: 250px 250px 250px minmax(280px, 350px);
+        grid-template-rows: 30px repeat(3, 200px);
+        grid-auto-rows: 250px;
+
+    }
+
+    .card {
+        grid-template-rows: 130px 0.9rem 40px;
+        max-width: 280px;
+
+    }
+
+    .card-image {
+        max-width: 220px;
+    }
+
+
+    .announcement-box>div>p,
+    .description {
+        font-size: 0.6rem;
+        line-height: 0.7rem;
+    }
+
+    .trending-box>div {
+        grid-template-rows: 30px 1fr;
+    }
+
+    .icon {
+        max-height: 40px;
+    }
 }
 
 .trending>h3 {
