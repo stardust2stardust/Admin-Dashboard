@@ -69,7 +69,7 @@ svg {
 body {
     display: grid;
     place-content: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 
 }
 
@@ -82,6 +82,7 @@ body {
         "nav header"
         "nav main";
     background-color: var(--color-primary);
+    overflow: hidden;
 }
 
 
@@ -126,6 +127,10 @@ input {
     border: none;
     border-radius: 15px;
     padding: 10px 5px 3px 5px;
+}
+
+input:focus-visible {
+    outline: none;
 }
 
 label {
@@ -191,6 +196,7 @@ label {
 
 /*  Nav area */
 nav {
+    height: 100vh;
     grid-area: nav;
     display: grid;
     grid-template-rows: 100px;
@@ -219,7 +225,7 @@ nav {
 
 .lower-nav {
     grid-area: lower-nav;
-    align-self: center;
+    align-self: end;
 
 }
 
@@ -243,20 +249,14 @@ nav {
 
 /* Main Area */
 main {
-
     grid-area: main;
     display: grid;
-    grid-template-columns: 300px 300px 300px minmax(280px, 350px);
-    grid-template-rows: 30px repeat(3, 230px);
-    grid-auto-rows: 230px;
+    grid-template-columns: 1fr minmax(280px, 350px);
     grid-template-areas:
-        "title title title sidebar"
-        "card0 card1 card2 sidebar"
-        "card3 card4 card5 sidebar"
-        "card6 card7 card8 sidebar";
-
+        "title sidebar"
+        "cards sidebar";
     gap: 20px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     background-color: var(--color-secondary);
     padding-left: 20px;
 }
@@ -264,6 +264,19 @@ main {
 .title {
     grid-area: title;
     padding-top: 10px;
+}
+
+.card-area {
+    grid-area: cards;
+    padding-right: 10px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "card0 card1 card2 "
+        "card3 card4 card5 "
+        "card6 card7 card8 ";
+    gap: 20px;
 }
 
 .card:nth-child(0) {
@@ -310,6 +323,7 @@ main {
 
 /* Card Layout */
 .card {
+    padding: 10px;
     background-color: var(--color-light);
     display: grid;
     grid-template-rows: auto 0.9rem auto;
@@ -320,6 +334,7 @@ main {
     border-radius: 10px;
     justify-items: center;
     align-items: center;
+    gap: 5px;
 }
 
 .card-image {
@@ -335,7 +350,8 @@ main {
     grid-area: img-title;
     font-size: 0.8rem;
     justify-self: start;
-    padding-left: 10px;
+    padding-left: 5px;
+
 
 }
 
@@ -348,37 +364,6 @@ main {
 }
 
 
-@media only screen and (max-width: 1540px) {
-    .main-container {
-        grid-template-columns: 200px 1fr;
-        grid-template-rows: 150px 1fr;
-
-    }
-
-    input,
-    .nav-item {
-        font-size: 1.1rem;
-    }
-
-    main {
-        grid-template-columns: 250px 250px 250px minmax(240px, 300px);
-        grid-template-rows: 30px repeat(3, 200px);
-
-
-    }
-
-    .card {
-        grid-template-rows: 130px 0.9rem 40px;
-        max-width: 280px;
-
-
-    }
-
-    .card-image {
-        max-width: 220px;
-    }
-}
-
 /* Sidebar */
 .sidebar {
     background-color: var(--color-dark);
@@ -386,6 +371,8 @@ main {
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
+
+
 
 .announcement>h3,
 .trending>h3 {
@@ -401,55 +388,12 @@ main {
 
 .announcement-box>div>p {
     font-size: 0.7rem;
+    line-height: 0.8rem;
 }
 
 .announcement-box>div>h5 {
     margin: 0px;
     padding: 15px 0px 0px 0px;
-}
-
-@media only screen and (max-width: 1540px) {
-    .main-container {
-        grid-template-columns: 200px 1fr;
-        grid-template-rows: 150px 1fr;
-    }
-
-    input,
-    .nav-item {
-        font-size: 1.1rem;
-    }
-
-    main {
-        grid-template-columns: 250px 250px 250px minmax(280px, 350px);
-        grid-template-rows: 30px repeat(3, 200px);
-        grid-auto-rows: 250px;
-
-    }
-
-    .card {
-        grid-template-rows: 130px 0.9rem 40px;
-        max-width: 280px;
-
-    }
-
-    .card-image {
-        max-width: 220px;
-    }
-
-
-    .announcement-box>div>p,
-    .description {
-        font-size: 0.6rem;
-        line-height: 0.7rem;
-    }
-
-    .trending-box>div {
-        grid-template-rows: 30px 1fr;
-    }
-
-    .icon {
-        max-height: 40px;
-    }
 }
 
 .trending>h3 {
@@ -464,10 +408,11 @@ main {
 
 .trending-box>div {
     display: grid;
-    grid-template-columns: 50px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: auto;
     column-gap: 5px;
     margin: 5px 0px;
+    padding: 3px 0px;
 
 }
 
@@ -492,4 +437,182 @@ main {
     grid-row: 2 / 3;
     font-size: 0.7rem;
     padding-left: 15px;
+}
+
+@media only screen and (max-width: 1540px) {
+    .main-container {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 150px 1fr;
+    }
+
+    input,
+    .nav-item {
+        font-size: 1.1rem;
+    }
+
+    main {
+        grid-template-columns: 1fr minmax(250px, 300px);
+        grid-template-rows: 30px;
+    }
+
+    .card {
+        grid-template-rows: 110px 0.9rem 30px;
+        max-width: 280px;
+        gap: 5px;
+        height: 180px;
+        padding-top: 5px;
+    }
+
+    .card-image {
+        max-width: 220px;
+    }
+
+    .card-icons {
+        padding-right: 0px;
+    }
+
+    .card-icons>div {
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+    }
+
+
+    .announcement-box>div>p,
+    .description {
+        font-size: 0.7rem;
+        line-height: 0.8rem;
+    }
+
+    .trending-box>div {
+        grid-template-rows: 30px 1fr;
+    }
+
+    .icon {
+        max-height: 40px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .main-container {
+        grid-template-columns: 175px 1fr;
+        grid-template-rows: 125px 1fr;
+    }
+
+    header {
+        padding-top: 10px;
+    }
+
+    input {
+        height: 20px;
+    }
+
+    input,
+    .nav-item,
+    .user-name {
+        font-size: 1rem;
+    }
+
+    .avatar-small {
+        width: 35px;
+    }
+
+
+    .header-bottom-row {
+        grid-template-columns: 50px auto 300px;
+    }
+
+    .avatar-med {
+        width: 45px;
+    }
+
+    .welcome>h2 {
+        font-size: 1.5rem;
+    }
+
+    .welcome {
+        padding-left: 15px;
+    }
+
+    .buttons>button {
+        width: 80px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    main {
+        grid-template-columns: 1fr minmax(250px, 280px);
+        grid-template-rows: 30px;
+
+    }
+
+    .card-area {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "card0 card1"
+            "card2 card3"
+            "card4 card5"
+            "card6 card7"
+            "card8 card9";
+
+    }
+
+    .card {
+        height: 220px;
+        grid-template-rows: 150px 1rem 30px;
+        max-width: 350px;
+    }
+
+
+    .card-image {
+        max-width: 280px;
+    }
+
+    .announcement-box>div>p,
+    .description {
+        font-size: 0.7rem;
+        line-height: 0.8rem;
+    }
+
+    .trending-box>div {
+        grid-template-rows: 30px 1fr;
+    }
+
+    .icon {
+        max-height: 40px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .card {
+        grid-template-rows: 120px 1rem 25px;
+        height: 200px;
+        padding: 10px;
+    }
+
+    .card>p {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .card-area {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card0"
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6"
+            "card7"
+            "card8";
+    }
+
+    .card {
+        height: 220px;
+        grid-template-rows: 150px 1.1rem 30px;
+    }
 }
